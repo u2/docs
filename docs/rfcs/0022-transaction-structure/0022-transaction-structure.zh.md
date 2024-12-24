@@ -37,7 +37,7 @@ CKB 采用 UTXO 模型。一笔交易会销毁一部分在之前转账中创建�
 
 CKB 主链将交易打包成块。我们可以在区块中利用编号是从零（也就是创世区块）开始递增的非负整数，作为区块编号来链接区块链上的区块。在区块中的交易也是按照顺序排列的。我们会说一个有较小的区块编号的区块是较早的区块，一个交易如果在一个较早的区块上，或者它在这个区块的位置在其他交易之前，那么它也是较早的交易。下图中，区块 i 是比区块 i+1 早产生的，然后交易发生的顺序为：tx1，tx2，tx3。
 
-![Block i is older than Block i + 1. Transaction tx1 is older than tx2 and is older than tx3.](older-block-and-transaction.png)
+![Block i is older than Block i + 1. Transaction tx1 is older than tx2 and is older than tx3.](/img/rfcs/0022/older-block-and-transaction.png)
 
 在所有先前的交易中，一个可用（Live）的 Cell 会以输出而非输入的形式出现。而一个被销毁（Dead）的 Cell，则代表它是以输入的形式，在先前的某笔交易中被使用过。一笔交易只能使用可用（Live）的 Cell 作为输入。
 
